@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Estoque</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Gerenciamento de Estoque</h1>
+
+    <div id="produto-form">
+        <h2>Adicionar Produto</h2>
+        <form id="add-produto-form">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required><br>
+            <label for="descricao">Descrição:</label>
+            <input type="text" id="descricao" name="descricao" required><br>
+            <label for="quantidade">Quantidade:</label>
+            <input type="number" id="quantidade" name="quantidade" required><br>
+            <label for="preco">Preço:</label>
+            <input type="number" id="preco" name="preco" step="0.01" required><br>
+            <label for="fornecedor">Fornecedor:</label>
+            <input type="text" id="fornecedor" name="fornecedor" required><br>
+            <button type="submit">Adicionar Produto</button>
+        </form>
+        <div id="search-form">
+            <h2>Pesquisar Produtos</h2>
+            <input type="text" id="search-input" placeholder="Digite o nome ou descrição do produto">
+            <button onclick="searchProdutos()">Pesquisar</button>
+        </div>
+    </div>
+
+    <div id="produtos-list"></div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
